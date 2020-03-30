@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.retrofit.R
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: PostAdapter
     private lateinit var dialog: ProgressDialog
 
-    private val model by lazy { ViewModelProviders.of(this).get(MainViewModel::class.java) }
+    private val model by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             setCanceledOnTouchOutside(false)
             setMessage("Please wait...")
         }
-        if(!dialog.isShowing){
+        if (!dialog.isShowing) {
             dialog.show()
         }
     }

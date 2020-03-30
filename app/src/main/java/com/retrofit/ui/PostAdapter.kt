@@ -14,12 +14,18 @@ open class PostAdapter(
     private val list: List<Posts>
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
-    inner class ViewHolder(var binding: ListDashboardBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(var binding: ListDashboardBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
 
-        val binding = DataBindingUtil.inflate<ListDashboardBinding>(inflater, R.layout.list_dashboard, parent, false)
+        val binding = DataBindingUtil.inflate<ListDashboardBinding>(
+            inflater,
+            R.layout.list_dashboard,
+            parent,
+            false
+        )
         return ViewHolder(binding)
     }
 

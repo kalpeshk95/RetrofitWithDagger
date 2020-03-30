@@ -16,7 +16,7 @@ import javax.inject.Inject
 class MainViewModel(@NotNull appContext: Application) : AndroidViewModel(appContext) {
 
     @set:Inject
-    lateinit var remoteRepository : RemoteRepository
+    lateinit var remoteRepository: RemoteRepository
 
     private lateinit var disposable: Disposable
 
@@ -37,7 +37,7 @@ class MainViewModel(@NotNull appContext: Application) : AndroidViewModel(appCont
             .subscribe({
                 list.value = it
                 showLoader.value = false
-            },{
+            }, {
                 showLoader.value = false
                 toastMsg.value = it.message
             })

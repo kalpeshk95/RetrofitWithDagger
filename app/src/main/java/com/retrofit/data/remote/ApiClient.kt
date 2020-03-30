@@ -16,7 +16,8 @@ object ApiClient {
             if (retrofit == null) {
 
                 val interceptor = HttpLoggingInterceptor()
-                interceptor.level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+                interceptor.level =
+                    if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
                 val client = OkHttpClient.Builder()
                     .addInterceptor(interceptor)
                     .build()
