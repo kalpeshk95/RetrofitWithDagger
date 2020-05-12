@@ -6,10 +6,10 @@ class MyApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        myComponent = DaggerMyComponent.create()
+        myComponent = DaggerMyComponent.builder().appModule(AppModule()).build()
     }
 
     companion object {
-        var myComponent: MyComponent? = null
+        lateinit var myComponent: MyComponent
     }
 }
