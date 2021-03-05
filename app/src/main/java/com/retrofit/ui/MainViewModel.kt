@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import com.retrofit.data.model.Posts
 import com.retrofit.data.remote.RemoteRepository
 import com.retrofit.di.MyApplication
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import org.jetbrains.annotations.NotNull
 import javax.inject.Inject
 
@@ -25,7 +25,7 @@ class MainViewModel(@NotNull appContext: Application) : AndroidViewModel(appCont
     var showLoader = MutableLiveData<Boolean>()
 
     init {
-        MyApplication.myComponent?.inject(this)
+        MyApplication.myComponent.inject(this)
     }
 
     fun fetchData() {

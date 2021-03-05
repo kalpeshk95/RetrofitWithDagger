@@ -4,7 +4,7 @@ import com.retrofit.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
@@ -26,7 +26,7 @@ object ApiClient {
                     .baseUrl("http://www.mocky.io/v2/")
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                     .build()
             }
             return retrofit

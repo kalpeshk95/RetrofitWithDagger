@@ -2,7 +2,7 @@ package com.retrofit.data.remote
 
 import com.retrofit.data.model.Posts
 import com.retrofit.di.MyApplication
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import javax.inject.Inject
 
 class RemoteRepository @Inject constructor() : RemoteCallback {
