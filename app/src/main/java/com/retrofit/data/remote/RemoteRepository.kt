@@ -9,8 +9,7 @@ class RemoteRepository @Inject constructor() : RemoteCallback {
 
 //    private var network: Network = ApiClient.client!!.create(Network::class.java)
 
-    @Inject
-    lateinit var network :  Network
+    @Inject lateinit var network :  Network
 
     init {
         MyApplication.myComponent.inject(this)

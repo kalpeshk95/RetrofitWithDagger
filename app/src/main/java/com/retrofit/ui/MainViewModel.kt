@@ -12,10 +12,10 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import org.jetbrains.annotations.NotNull
 import javax.inject.Inject
 
+class MainViewModel @Inject constructor(@NotNull appContext: Application) :
+    AndroidViewModel(appContext) {
 
-class MainViewModel(@NotNull appContext: Application) : AndroidViewModel(appContext) {
-
-    @set:Inject
+    @Inject
     lateinit var remoteRepository: RemoteRepository
 
     private lateinit var disposable: Disposable
